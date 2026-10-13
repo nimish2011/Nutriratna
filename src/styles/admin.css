@@ -41,9 +41,9 @@ th {
 }
 
 .tabs .on {
-  background:var(--forest);
-  color:#f6efd9;
-  border-color:var(--forest);
+  background:var(--btn);
+  color:var(--btn-ink);
+  border-color:var(--btn);
 }
 
 .kpi {
@@ -72,3 +72,5 @@ th {
 a.btn { text-decoration: none; display: inline-block; }
 a.btn.wa { background: #25d366; color: #0b2b16; }
 .tbl select { width: auto; min-width: 130px; }
+
+.stock-input { width: 90px; margin-right: 8px; }

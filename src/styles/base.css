@@ -30,8 +30,8 @@ button,input,select,textarea {
 }
 
 .btn {
-  background:var(--forest);
-  color:#f6efd9;
+  background:var(--btn);
+  color:var(--btn-ink);
   border:0;
   padding:12px 22px;
   border-radius:999px;

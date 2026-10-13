@@ -30,9 +30,15 @@ export default function App() {
   const [view, setView] = useState('shop');
   const [cartOpen, setCartOpen] = useState(false);
 
+  // Switch page. Opening the shop re-checks stock so prices/availability are never stale.
+  const navigate = (next) => {
+    setView(next);
+    if (next === 'shop') products.refresh();
+  };
+
   // Go to the shop page and scroll to a section ('shop', 'bulk' or 'contact').
   const goTo = (sectionId) => {
-    setView('shop');
+    navigate('shop');
     setTimeout(() => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' }), 50);
   };
 
@@ -56,7 +62,7 @@ export default function App() {
   return (
     <>
       <TopBar />
-      <Header cartCount={cart.count} onGoTo={goTo} onNavigate={setView} onOpenCart={() => setCartOpen(true)} />
+      <Header cartCount={cart.count} onGoTo={goTo} onNavigate={navigate} onOpenCart={() => { products.refresh(); setCartOpen(true); }} />
 
       {view === 'shop' && <StorePage products={products} onAddToCart={addToCart} onGoTo={goTo} />}
       {view === 'track' && <TrackOrder />}

@@ -61,7 +61,7 @@ The site now needs a **Node.js host** (not just static hosting): Render, Railway
 | I want to…                                  | Edit                                                     |
 |---------------------------------------------|----------------------------------------------------------|
 | Change phone / email shown on the site      | `src/config/constants.js` → `CONTACT`                    |
-| Change starting prices / stock              | `SEED_DB` in constants.js (only for a fresh `data/db.json`); afterwards use Admin → Inventory |
+| Set real prices / stock                     | Admin → Inventory (type the exact stock number or edit the price). Stock starts at **0**, so every pack shows "Out of stock" until you add stock. `SEED_DB` in constants.js only matters for a brand-new `data/db.json`. |
 | Change shipping fee / free-shipping limit   | `src/config/constants.js`                                |
 | Change colours / fonts                      | `src/styles/tokens.css`                                  |
 | Change which fields the query form requires | `validateInquiry` in `src/utils/validation.js` (applies to browser + server) |

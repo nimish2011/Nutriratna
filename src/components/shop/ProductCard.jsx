@@ -4,7 +4,7 @@ import QtyStepper from '../common/QtyStepper';
 import PackImage from './PackImage';
 
 function StockBadge({ sku }) {
-  if (sku.stock < 1) return <span className="pill bad">Sold out</span>;
+  if (sku.stock < 1) return <span className="pill bad">Out of stock</span>;
   if (sku.stock <= sku.minStock) return <span className="pill">Only {sku.stock} left</span>;
   return <span className="pill ok">In stock</span>;
 }
@@ -26,7 +26,7 @@ export default function ProductCard({ sku, onAdd }) {
         <QtyStepper value={qty} onChange={setQty} max={sku.stock || 1} />
       </div>
       <button className="btn btn-block" disabled={soldOut} onClick={() => onAdd(sku, qty)}>
-        {soldOut ? 'Unavailable' : 'Add to cart'}
+        {soldOut ? 'Out of stock' : 'Add to cart'}
       </button>
     </div>
   );

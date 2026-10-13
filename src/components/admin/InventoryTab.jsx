@@ -8,7 +8,7 @@ export default function InventoryTab({ skus, moves, onAdjust, onPrice }) {
     <div>
       <div className="tbl card">
         <table>
-          <thead><tr><th>Pack</th><th>Price (₹)</th><th>Stock</th><th>Adjust</th></tr></thead>
+          <thead><tr><th>Pack</th><th>Price (₹)</th><th>Stock (type exact number)</th><th>Adjust</th></tr></thead>
           <tbody>
             {skus.map((s) => (
               <tr key={s.id}>
@@ -23,7 +23,23 @@ export default function InventoryTab({ skus, moves, onAdjust, onPrice }) {
                     onBlur={(e) => onPrice(s.id, e.target.value)}
                   />
                 </td>
-                <td><span className={`pill ${s.stock <= s.minStock ? 'bad' : 'ok'}`}>{s.stock}</span></td>
+                <td>
+                  {/* Type the real stock and click away (or press Enter) to save. */}
+                  <input
+                    key={`stock-${s.stock}`}
+                    className="stock-input"
+                    type="number"
+                    min="0"
+                    step="1"
+                    defaultValue={s.stock}
+                    onKeyDown={(e) => e.key === 'Enter' && e.target.blur()}
+                    onBlur={(e) => {
+                      const value = Math.floor(Number(e.target.value));
+                      if (Number.isFinite(value) && value >= 0 && value !== s.stock) onAdjust(s.id, value - s.stock);
+                    }}
+                  />
+                  <span className={`pill ${s.stock <= s.minStock ? 'bad' : 'ok'}`}>{s.stock <= s.minStock ? 'Low' : 'OK'}</span>
+                </td>
                 <td>
                   <div className="row adjust-row">
                     {ADJUSTMENTS.map((d) => (

@@ -33,14 +33,15 @@ export const ADMIN_TABS = [
   { id: 'audit', label: 'Audit log', adminOnly: true },
 ];
 
-// Starting data used the first time the server runs.
+// Starting data used the first time the server runs. Stock starts at 0 —
+// add real stock in Admin → Inventory. Prices below are placeholders: set your own there too.
 export const SEED_DB = {
   skus: [
-    { id: '250g', label: '250 g', weightKg: 0.25, price: 249, stock: 120, minStock: 20 },
-    { id: '500g', label: '500 g', weightKg: 0.5, price: 459, stock: 90, minStock: 20 },
-    { id: '1kg', label: '1 kg', weightKg: 1, price: 849, stock: 60, minStock: 15 },
-    { id: '5kg', label: '5 kg', weightKg: 5, price: 3999, stock: 25, minStock: 5 },
-    { id: '10kg', label: '10 kg', weightKg: 10, price: 7499, stock: 12, minStock: 3 },
+    { id: '250g', label: '250 g', weightKg: 0.25, price: 249, stock: 0, minStock: 20 },
+    { id: '500g', label: '500 g', weightKg: 0.5, price: 459, stock: 0, minStock: 20 },
+    { id: '1kg', label: '1 kg', weightKg: 1, price: 849, stock: 0, minStock: 15 },
+    { id: '5kg', label: '5 kg', weightKg: 5, price: 3999, stock: 0, minStock: 5 },
+    { id: '10kg', label: '10 kg', weightKg: 10, price: 7499, stock: 0, minStock: 3 },
   ],
   orders: [],
   inquiries: [],

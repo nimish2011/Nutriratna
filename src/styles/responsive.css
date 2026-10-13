@@ -6,7 +6,7 @@
   }
   .hero .art {
     order:-1;
-    max-height:200px;
+    
   }
   form.f {
     grid-template-columns:1fr;
@@ -27,4 +27,11 @@
 
 @media (max-width: 600px) {
   .topbar .wrap { justify-content: space-between; gap: 8px; font-size: 12px; }
+}
+
+@media (max-width: 760px) {
+  .hero { padding: 36px 0 48px; }
+  .hero .wrap { gap: 28px; }
+  .hero .art { max-height: none; }
+  .hero .art img { max-height: 280px; transform: none; }
 }
