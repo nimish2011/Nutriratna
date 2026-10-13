@@ -1,0 +1,85 @@
+/* Storefront: product cards, features, wholesale band */
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(188px,1fr));
+  gap:16px;
+}
+
+.card {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  transition:.25s;
+}
+
+.pc:hover {
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px #1f3d2b22;
+  border-color:var(--gold);
+}
+
+.pimg {
+  height:230px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#efe3bd,#f8f1da);
+  display:grid;
+  place-items:center;
+  margin-bottom:12px;
+}
+
+.price {
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  color:var(--forest);
+  font-weight:700;
+}
+
+@media(prefers-color-scheme:dark) {
+  .price {
+    color:var(--gold);
+  }
+}
+
+.feat {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.feat .card {
+  text-align:center;
+}
+
+.feat .ic {
+  font-size:30px;
+}
+
+.band {
+  background:var(--forest);
+  color:#f6efd9;
+}
+
+.band .sh p {
+  color:#cfc8ae;
+}
+
+.band .card {
+  color:var(--ink);
+}
+
+.band label {
+  color:var(--mut);
+}
+
+.pimg { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: #f6efdc; }
+.pimg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
+.pack-tag { position: absolute; top: 8px; left: 8px; background: var(--forest); color: #f6efd9; }
+.pack-title { font-size: 24px; }
+.buy-row { margin: 10px 0; }
+.features-section { padding-top: 0; }
+
+.contact-card { text-align: center; text-decoration: none; color: inherit; }
+.contact-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.contact-card .ic { font-size: 30px; }

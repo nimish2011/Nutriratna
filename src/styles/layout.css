@@ -1,0 +1,115 @@
+/* Layout: header, navigation, hero, footer */
+
+header {
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:20;
+  background:var(--forest);
+  color:#f6efd9;
+  border-bottom:2px solid var(--gold);
+}
+
+header .wrap {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  height:62px;
+}
+
+.logo {
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;
+  font-weight:700;
+  color:#f6efd9;
+  cursor:pointer;
+}
+
+.logo b {
+  color:var(--gold);
+}
+
+nav {
+  display:flex;
+  gap:4px;
+  margin-left:auto;
+  align-items:center;
+  overflow-x:auto;
+}
+
+nav a,nav button {
+  background:none;
+  border:0;
+  color:#f6efd9;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:8px;
+  white-space:nowrap;
+  opacity:.85;
+}
+
+nav a:hover,nav button:hover {
+  opacity:1;
+  background:#ffffff14;
+}
+
+.cartb {
+  background:var(--gold)!important;
+  color:#1b1608!important;
+  font-weight:600;
+  opacity:1!important;
+}
+
+.hero {
+  background:radial-gradient(circle at 80% 30%,#2f5a40,var(--forest) 60%);
+  color:#f6efd9;
+  padding:72px 0 80px;
+  overflow:hidden;
+}
+
+.hero .wrap {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:30px;
+  align-items:center;
+}
+
+.hero h1 {
+  font-size:clamp(38px,6vw,68px);
+  line-height:1.05;
+}
+
+.hero h1 i {
+  color:var(--gold);
+}
+
+.hero p {
+  max-width:480px;
+  opacity:.9;
+  margin:18px 0 28px;
+}
+
+footer {
+  background:var(--forest);
+  color:#cfc8ae;
+  padding:34px 0;
+  text-align:center;
+  font-size:13px;
+  border-top:2px solid var(--gold);
+}
+
+.hero .art { text-align: center; }
+.hero .art img { max-height: 380px; max-width: 100%; border-radius: 24px; border: 2px solid var(--gold); box-shadow: 0 24px 60px #0006; transform: rotate(2deg); }
+.footer-brand { font-size: 22px; color: #f6efd9; }
+
+/* Cart button sits outside <nav> so it is always visible, even on phones. */
+.cartb { border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
+
+/* ---- contact strip, footer links, floating WhatsApp ---- */
+.topbar { background: #12281b; color: #e9dfc0; font-size: 13px; }
+.topbar .wrap { display: flex; justify-content: flex-end; gap: 22px; padding-top: 6px; padding-bottom: 6px; }
+.topbar a, .footer-links a { color: inherit; text-decoration: none; }
+.topbar a:hover, .footer-links a:hover { color: var(--gold); }
+.footer-tag { margin: 2px 0 12px; font-style: italic; }
+.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 14px; }
+.wa-float { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 6px 20px #0005; z-index: 30; transition: transform .2s; }
+.wa-float:hover { transform: scale(1.08); }

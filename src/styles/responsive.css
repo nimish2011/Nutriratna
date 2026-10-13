@@ -1,0 +1,30 @@
+/* Mobile / small-screen overrides */
+
+@media(max-width:760px) {
+  .hero .wrap {
+    grid-template-columns:1fr;
+  }
+  .hero .art {
+    order:-1;
+    max-height:200px;
+  }
+  form.f {
+    grid-template-columns:1fr;
+  }
+  section {
+    padding:44px 0;
+  }
+}
+
+/* Phones: logo + cart on the first row, navigation links on a second row. */
+@media (max-width: 600px) {
+  header .wrap { flex-wrap: wrap; height: auto; gap: 0 10px; padding-top: 8px; padding-bottom: 4px; }
+  .logo { order: 1; }
+  .cartb { order: 2; margin-left: auto; }
+  header nav { order: 3; width: 100%; margin-left: 0; justify-content: space-between; }
+  header nav button { padding: 6px 8px; font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+  .topbar .wrap { justify-content: space-between; gap: 8px; font-size: 12px; }
+}

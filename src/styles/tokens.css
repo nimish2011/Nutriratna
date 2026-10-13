@@ -1,0 +1,45 @@
+/* Design tokens: colours, light/dark themes */
+
+:root {
+  --cream:#faf5e8;
+  --card:#fffdf6;
+  --ink:#1f2a1c;
+  --mut:#6b705e;
+  --forest:#1f3d2b;
+  --olive:#6b7a3a;
+  --gold:#b8923a;
+  --line:#e6dcc0;
+  --bad:#a63d2f;
+  --ok:#2f7a4a;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+
+:root:not([data-theme="light"]) {
+}
+
+@media(prefers-color-scheme:dark) {
+  :root:not([data-theme="light"]) {
+    --cream:#141c15;
+    --card:#1c261d;
+    --ink:#f1ead6;
+    --mut:#a5ab94;
+    --forest:#0f2418;
+    --line:#2f3b2d;
+  }
+}
+
+:root[data-theme="dark"] {
+  --cream:#141c15;
+  --card:#1c261d;
+  --ink:#f1ead6;
+  --mut:#a5ab94;
+  --forest:#0f2418;
+  --line:#2f3b2d;
+}
+
+html {
+  scroll-padding-top:env(safe-area-inset-top,0px);
+  scroll-behavior:smooth;
+}
